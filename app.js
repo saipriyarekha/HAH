@@ -15,6 +15,9 @@ app.get('/login', function (req, res) {
 app.get('/registration', function (req, res) {
   res.render('registration.ejs');
 });
+app.get('/index', function (req, res) {
+  res.render('index.ejs');
+});
 app.listen(5000,()=>{
   console.log('server started at 5000')
 })
