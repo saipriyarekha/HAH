@@ -12,6 +12,9 @@ app.get('/login', function (req, res) {
   res.render('login.ejs');
   //log("", getIp(req), req.method, req.route.path);
 });
+app.get('/registration', function (req, res) {
+  res.render('registration.ejs');
+});
 app.listen(5000,()=>{
   console.log('server started at 5000')
 })
