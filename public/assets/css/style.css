@@ -324,14 +324,15 @@ img {
   z-index: 99;
 }
 #mu-slider .mu-slider-area .mu-top-slider .mu-top-slider-single .mu-top-slider-content .mu-slider-small-title {
-  font-family: "Tangerine", cursive;
+  font-family: "Monotype Corsiva", cursive;
   font-size: 100px;
   font-weight: 400;
   line-height: 40px;
 }
 #mu-slider .mu-slider-area .mu-top-slider .mu-top-slider-single .mu-top-slider-content .mu-slider-title {
-  color: #fff;
-  font-size: 70px;
+  font-family: "Calibri", cursive;
+  color:White;
+  font-size: 45px;
   line-height: 90px;
 }
 #mu-slider .mu-slider-area .mu-top-slider .mu-top-slider-single .mu-top-slider-content p {
@@ -2286,8 +2287,8 @@ RESERVATION SECTION
   #mu-restaurant-menu .mu-restaurant-menu-area .mu-restaurant-menu-content .mu-restaurant-menu li {
     margin-bottom: 10px;
   }
-  .mu-blog-related-post .mu-blog-related-post-area {   
-    margin-top: 30px;   
+  .mu-blog-related-post .mu-blog-related-post-area {
+    margin-top: 30px;
   }
 }
 @media (max-width: 360px) {
@@ -2421,7 +2422,7 @@ RESERVATION SECTION
   #mu-blog-banner .mu-blog-banner-area {
     padding: 25% 0;
   }
-  .mu-news-single .mu-news-single-content .mu-meta-nav li {   
+  .mu-news-single .mu-news-single-content .mu-meta-nav li {
     border-right: none;
   }
 }
