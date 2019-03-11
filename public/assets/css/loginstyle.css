@@ -406,7 +406,7 @@ input.checkbox:checked:after {
   -moz-animation-delay: 2s;
   -o-animation-delay: 2s;
   -ms-animation-delay: 2s;
-  animation-delay: 2s;
+  animation-delay: 0s;
   -webkit-animation-duration: 17s;
   -moz-animation-duration: 17s;
   -o-animation-duration: 17s;
