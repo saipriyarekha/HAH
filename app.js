@@ -12,11 +12,20 @@ app.get('/login', function (req, res) {
   res.render('login.ejs');
   //log("", getIp(req), req.method, req.route.path);
 });
-app.get('/registration', function (req, res) {
-  res.render('registration.ejs');
+app.get('/student', function (req, res) {
+  res.render('student.ejs');
+});
+app.get('/faculty', function (req, res) {
+  res.render('faculty.ejs');
+});
+app.get('/admin', function (req, res) {
+  res.render('admin.ejs');
 });
 app.get('/index', function (req, res) {
   res.render('index.ejs');
+});
+app.get('/mainlogin', function (req, res) {
+  res.render('mainlogin.ejs');
 });
 app.listen(5000,()=>{
   console.log('server started at 5000')
