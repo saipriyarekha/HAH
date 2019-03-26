@@ -192,9 +192,9 @@ img {
 }
 .mu-main-navbar .navbar-header .navbar-brand {
   padding: 0;
-  margin-top: 8px;
-  height: 34px;
-  width: 145px;
+  margin-top: 0px;
+  height: 70px;
+  width: 70px;
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   -ms-transition: all 0.5s;
