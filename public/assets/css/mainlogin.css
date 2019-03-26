@@ -109,11 +109,11 @@ section #services li span {
   left: 20%;
   width: 80px;
   height: 80px;
-  -webkit-animation-delay: 2s;
-  -moz-animation-delay: 2s;
-  -o-animation-delay: 2s;
-  -ms-animation-delay: 2s;
-  animation-delay: 2s;
+  -webkit-animation-delay: 0s;
+  -moz-animation-delay: 0s;
+  -o-animation-delay: 0s;
+  -ms-animation-delay: 0s;
+  animation-delay: 0s;
   -webkit-animation-duration: 17s;
   -moz-animation-duration: 17s;
   -o-animation-duration: 17s;
