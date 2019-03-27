@@ -99,7 +99,9 @@ app.use('/faculties', require('./routes/faculties'));
 app.use('/admins', require('./routes/admins'));
 
 //app.set('layouts', './views/layout');
-
+app.get('/404', function (req, res) {
+  res.render('404.ejs');
+});
 app.get('/login', function (req, res) {
   res.render('login.ejs');
   //log("", getIp(req), req.method, req.route.path);
