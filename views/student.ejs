@@ -13,10 +13,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- Custom Theme files -->
 <link href="/assets/css/registrationstyle.css" rel="stylesheet" type="text/css" media="all" />
-<link href="/assets/css/loginstyle.css" rel="stylesheet" type="text/css" media="all" />
 <!-- //Custom Theme files -->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 <link href="https://bootswatch.com/4/journal/bootstrap.min.css" rel="stylesheet" type='text/css'>
+
 <!-- web font -->
 <link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
 <!-- //web font -->
@@ -26,27 +26,25 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-		
 	<!-- main -->
 	<div class="main-w3layouts wrapper">
+			
 		<h1>SignUp Form</h1>
-		
 		<div class="main-agileinfo">
 			<div class="agileits-top">
 					<% include ./partials/messages %>
 				<form action="/users/student" method="post">
-					<input class="text" id="username" type="text" name="username" placeholder="Name" required="" value="<%= typeof email != 'undefined' ? username: '' %>">
-					<input class="text email" id="email" type="email" name="email" placeholder="Email" required="" value="<%= typeof email != 'undefined' ? email: '' %>">
-					<input class="text" id="password" type="password" name="password" placeholder="Password" required="" value="<%= typeof email != 'undefined' ? password: '' %>">
-					<input class="text w3lpass" id="cpassword" type="password" name="cpassword" placeholder="Confirm Password" required="" value="<%= typeof email != 'undefined' ? cpassword: '' %>">
-					<!--<input class="text" type="text" name="department" placeholder="Department" required="">-->
-					<select class="form-control" id="department" name="department">
-                        <option value="0">Department</option>
-                        <option value="CSE">CSE</option>
-                        <option value="ECE">ECE</option>
-                        <option value="EEE">EEE</option>
-                        <option value="MECH">MECH</option>
-                      </select>
+					<input class="text" id="username"type="text" name="username" placeholder="Name" required="">
+					<input class="text email" id="email"type="email" name="email" placeholder="Email" required="">
+					<input class="text" id="password"type="password" name="password" placeholder="Password" required="">
+					<input class="text w3lpass" id="cpassword" type="password" name="cpassword" placeholder="Confirm Password" required="">
+					<select class="main-agileinfo1" id="department" type="drop-down"name="department">
+							<option value="0" style='color:black;' >Department</option>
+							<option value="CSE" style='color:black;'>CSE</option>
+							<option value="ECE" style='color:black;'>ECE</option>
+							<option value="EEE" style='color:black;'>EEE</option>
+							<option value="MECH" style='color:black;'>MECH</option>
+						  </select>
 					<!--<div class="wthree-text">
 						<label class="anim">
 							<input type="checkbox" class="checkbox" required="">
@@ -54,8 +52,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						</label>
 						<div class="clear"> </div>
 					</div>-->
-					
-					<input type="submit" value="SIGN UP"><a href="/login"></a>
+					<input type="submit" value="SIGNUP"><a href="/login"></a>
 				</form>
 				<p>Already have an Account? <a href="/login"> Login Now!</a></p>
 			</div>

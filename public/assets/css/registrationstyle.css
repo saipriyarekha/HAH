@@ -149,8 +149,21 @@ h1 {
 .agileits-top {
   padding: 3em;
 }
+.main-agileinfo1{
+  width: 95%;
+  padding: 0.5em;
+ /* margin: 1.5em auto;*/
+  font-size: 1em;
+  text-align: center;
+  color: #fff;
+  font-weight: 100;
+  background: rgba(0, 0, 0, 0);
+  background-size: cover;
+  
+}
+.main-agileinfo1 option:hover {background-color: #ddd;}
 
-input[type="text"], input[type="email"], input[type="password"] {
+input[type="text"], input[type="email"], input[type="password"], input[type="drop-down"] {
   font-size: 0.9em;
   color: #fff;
   font-weight: 100;
@@ -534,7 +547,7 @@ input.checkbox:checked:after {
 
 /*-- responsive-design --*/
 @media(max-width:1440px) {
-  input[type="text"], input[type="email"], input[type="password"] {
+  input[type="text"], input[type="email"], input[type="password"], input[type="drop-down"] {
     width: 94%;
   }
 }
@@ -590,7 +603,7 @@ input.checkbox:checked:after {
     width: 58%;
   }
 
-  input[type="text"], input[type="email"], input[type="password"] {
+  input[type="text"], input[type="email"], input[type="password"], input[type="drop-down"] {
     width: 93%;
   }
 }
@@ -652,7 +665,7 @@ input.checkbox:checked:after {
     padding: 1.8em;
   }
 
-  input[type="text"], input[type="email"], input[type="password"] {
+  input[type="text"], input[type="email"], input[type="password"], input[type="drop-down"] {
     width: 91%;
   }
 
@@ -728,7 +741,7 @@ input.checkbox:checked:after {
     margin: 0 0 1em;
   }
 
-  input[type="text"], input[type="email"], input[type="password"] {
+  input[type="text"], input[type="email"], input[type="password"], input[type="drop-down"] {
     width: 89.5%;
     font-size: 0.85em;
   }
