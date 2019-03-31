@@ -53,6 +53,13 @@ a {
   text-decoration: none;
   color: #333333;
 }
+.image {
+  position: absolute;
+      left: 100px;
+      top: 15px;
+      height: 70px;
+      width: 70px;
+}
 
 a:hover,
 a:focus {

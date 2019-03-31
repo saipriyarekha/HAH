@@ -6,7 +6,8 @@ var expressValidator = require('express-validator');
 var flash = require('connect-flash');
 var session = require('express-session');
 var passport = require('passport');
-
+var ensureLoggedIn = require('connect-ensure-login').ensureLoggedIn
+//var ensureLoggedIn = require('ensureLoggedIn');
 //passport config
 require('./config/passport')(passport);
 //const bcrypt = require('bcryptjs');
@@ -97,8 +98,11 @@ app.use('/trail', require('./routes/trail'));
 app.use('/users', require('./routes/users'));
 app.use('/faculties', require('./routes/faculties'));
 app.use('/admins', require('./routes/admins'));
+app.use('/boards', require('./routes/boards'));
+app.use('/contacts', require('./routes/contacts'));
+app.use('/dashs', require('./routes/dashs'));
+app.use('/trainers', require('./routes/trainers'));
 
-//app.set('layouts', './views/layout');
 app.get('/404', function (req, res) {
   res.render('404.ejs');
 });
@@ -130,10 +134,17 @@ app.get('/index', function (req, res) {
 app.get('/mainlogin', function (req, res) {
   res.render('mainlogin.ejs');
 });
-app.get('/dashboard', function (req, res) {
-    res.render('dashboard.ejs');
-  
-  
+/*app.get('/dashboard', function (req, res) {
+    res.render('dashboard.ejs');  
+});*/
+app.get('/board', function (req, res) {
+  res.render('board.ejs');  
+});
+app.get('/contact', function (req, res) {
+  res.render('contact.ejs');  
+});
+app.get('/adashboard', function (req, res) {
+  res.render('adashboard.ejs');
 });
 /*app.post('/student', function (req, res) {
   res.render('student.ejs');
@@ -151,11 +162,25 @@ app.get('/dashboard', function (req, res) {
     //res.render('login.ejs');
     //console.log(htmlData); 
 //});
+app.post('/update',  function(req, res) {
+  user.update({_id: req.session.passport.user}, {
+      displayName: req.body.username 
+  }, function(err, numberAffected, rawResponse) {
+     console.log('new profile update error');
+  });
+  res.render('/users/dashboard.ejs', {
+      user : req.user // get the user out of session and pass to template
+  });
+});
+
+
+app.get('/fdashboard', (req, res) => 
+res.render('fdashboard'));
 //login handle
 app.post('/login', (req, res, next) =>{
-  passport.authenticate('user', {
+  passport.authenticate('student', {
       
-      successRedirect: '/dashboard',
+      successRedirect: '/users/dashboard',
       failureRedirect: '/login',
       failureFlash: true
   })(req, res, next);
@@ -163,14 +188,14 @@ app.post('/login', (req, res, next) =>{
 //login handle
 app.post('/facultylogin', (req, res, next) =>{
   passport.authenticate('faculty', {
-      successRedirect: '/dashboard',
+      successRedirect: '/trainers/fdashboard',
       failureRedirect: '/facultylogin',
       failureFlash: true
   })(req, res, next);
 });
 app.post('/adminlogin', (req, res, next) =>{
   passport.authenticate('admin', {
-      successRedirect: '/dashboard',
+      successRedirect: '/adashboard',
       failureRedirect: '/adminlogin',
       failureFlash: true
   })(req, res, next);

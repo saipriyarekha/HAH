@@ -33,18 +33,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="agileits-top">
 					<% include ./partials/messages %>
 				<form action="/faculties/faculty" method="post">
-					<input class="text" id="name" type="text" name="name" placeholder="Name" required="">
-                    <input class="text email" id="email" type="email" name="email" placeholder="Email" required="">
-					<input class="text" id="password" type="password" name="password" placeholder="Password" required="">
-                    <input class="text w3lpass" id="cpassword" type="password" name="cpassword" placeholder="Confirm Password" required="">
-					<!--<input class="text" id="department" type="text" name="department" placeholder="Department" required="">-->
+					<input class="text" id="name" type="text" name="name" placeholder="TRAINER NAME" required="">
+					<input class="text email" id="email" type="email" name="email" placeholder="EMAIL" required="">
+					<input class="text" id="comp" type="text" name="comp" placeholder="COMPANY" required="">
+					<DIV> <BR> </DIV>
+					<input class="text" id="password" type="password" name="password" placeholder="PASSWORD" required="">
+                    <input class="text w3lpass" id="cpassword" type="password" name="cpassword" placeholder="CONFIRM PASSWORD" required="">
+					<!--<input class="text" id="department" type="text" name="department" placeholder="Department" required="">
 					<select class="main-agileinfo1" id="department" type="drop-down" name="department">
 							<option value="0" style='color:black;'>Department</option>
 							<option value="CSE" style='color:black;'>CSE</option>
 							<option value="ECE" style='color:black;'>ECE</option>
 							<option value="EEE" style='color:black;'>EEE</option>
 							<option value="MECH" style='color:black;'>MECH</option>
-						  </select>
+						  </select>-->
 					
 					<!--<div class="wthree-text">
 						<label class="anim">
@@ -53,9 +55,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						</label>
 						<div class="clear"> </div>
 					</div>-->
-					<input type="submit" value="SIGNUP"><a href="/facultylogin"></a>
+					<input type="submit" value="SIGNUP">
 				</form>
 				<p>Already have an Account? <a href="/facultylogin"> Login Now!</a></p>
+				<br>
+				<p><a href="/mainlogin">HOME</a></p>
 			</div>
 		</div>
 		<!-- copyright -->

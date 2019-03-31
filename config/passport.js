@@ -8,10 +8,10 @@ var Faculty = require('../models/facultym');
 var Admin = require('../models/adminm');
 
 module.exports = function(passport) {
-    passport.use('user',
-        new LocalStrategy({ usernameField: 'email' }, (email, password, done) => {
+    passport.use('student',
+        new LocalStrategy({ usernameField: 'rollno' }, (rollno, password, done) => {
             //match user
-            User.findOne({ email: email })
+            User.findOne({ rollno: rollno })
                 .then(user => {
                     if(!user) {
                         return done(null, false, { message: 'Your email is not registered!'});
@@ -32,15 +32,15 @@ module.exports = function(passport) {
         })
     );
 
-    passport.serializeUser((user, done) => {
-        done(null, user.id);
-      });
+    // passport.serializeUser((user, done) => {
+    //     done(null, user.id);
+    //   });
       
-      passport.deserializeUser((id, done) => {
-        User.findById(id, function(err, user) {
-          done(err, user);
-        });
-      });
+    //   passport.deserializeUser((id, done) => {
+    //     User.findById(id, function(err, user) {
+    //       done(err, user);
+    //     });
+    //   });
 
       passport.use('faculty',
         new LocalStrategy({ usernameField: 'email' }, (email, password, done) => {
@@ -66,15 +66,15 @@ module.exports = function(passport) {
         })
     );
 
-    passport.serializeUser((user, done) => {
-        done(null, user.id);
-      });
+    // passport.serializeUser((user, done) => {
+    //     done(null, user.id);
+    //   });
       
-      passport.deserializeUser((id, done) => {
-        User.findById(id, function(err, user) {
-          done(err, user);
-        });
-      });
+    //   passport.deserializeUser((id, done) => {
+    //     User.findById(id, function(err, user) {
+    //       done(err, user);
+    //     });
+    //   });
 
       passport.use('admin',
         new LocalStrategy({ usernameField: 'email' }, (email, password, done) => {

@@ -8,13 +8,14 @@ var Admin = require('../models/adminm');
 
 //admin page
 router.get('/admin', (req, res) => res.render('admin'));
+router.get('/adashboard', (req, res) => res.render('adashboard'));
 //routerhandle
 router.post('/admin', (req, res) => {
-    var { name, email, password, cpassword, department, designation } = req.body;
+    var { name, email, password, cpassword } = req.body;
     let errors = [];
 
     //check required fields
-    if(!name || !email || !password || !cpassword || !department || !designation ) {
+    if(!name || !email || !password || !cpassword ) {
         errors.push({ msg: 'please fill all the fields' });
     }
 
@@ -33,9 +34,7 @@ router.post('/admin', (req, res) => {
             name,
             email,
             password,
-            cpassword,
-            department,
-            designation
+            cpassword
         });
     }else {
         //validation passed
@@ -49,18 +48,14 @@ router.post('/admin', (req, res) => {
                     name,
                     email,
                     password,
-                    cpassword,
-                    department,
-                    designation
+                    cpassword
                 });
             } else {
                 const newAdmin = new Admin({
                     name,
                     email,
                     password,
-                    cpassword,
-                    department,
-                    designation
+                    cpassword
                 });
                 //hash password
                 bcrypt.genSalt(10, (err, salt) => 

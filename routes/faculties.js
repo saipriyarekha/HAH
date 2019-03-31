@@ -2,18 +2,21 @@ var express = require('express');
 var router = express.Router();
 var bcrypt = require('bcryptjs');
 var passport = require('passport');
+//var bodyParser = require('body-parser');
+//var { ensureAuthenticated } = require('../config/auth');
 //faculty module
 var Faculty = require('../models/facultym');
 //faculty
 router.get('/faculty', (req, res) => res.render('faculty'));
-//router.get('/facultylogin', (req, res) => res.render('facultylogin'));
+
+
 //routerhandle
 router.post('/faculty', (req, res) => {
-    var { name, email, password, cpassword, department } = req.body;
+    var { name, email, comp, password, cpassword } = req.body;
     let errors = [];
 
     //check required fields
-    if(!name || !email || !password || !cpassword || !department ) {
+    if(!name || !email || !comp || !password || !cpassword ) {
         errors.push({ msg: 'please fill all the fields' });
     }
 
@@ -31,32 +34,32 @@ router.post('/faculty', (req, res) => {
             errors, 
             name,
             email,
+            comp,
             password,
-            cpassword,
-            department
+            cpassword
         });
     }else {
         //validation passed
         Faculty.findOne({ email: email })
-        .then(facultym => {
-            if(facultym) {
+        .then(user => {
+            if(user) {
                 //user exists
                 errors.push({ msg: 'email is already registered'});
                 res.render('faculty', {
                     errors,
                     name,
                     email,
+                    comp,
                     password,
-                    cpassword,
-                    department
+                    cpassword
                 });
             } else {
                 const newFaculty = new Faculty({
                     name,
                     email,
+                    comp,
                     password,
-                    cpassword,
-                    department
+                    cpassword
                 });
                 //hash password
                 bcrypt.genSalt(10, (err, salt) => 
@@ -66,7 +69,7 @@ router.post('/faculty', (req, res) => {
                     newFaculty.password = hash;
                     //save faculty
                     newFaculty.save()
-                    .then(Faculty => {
+                    .then(user => {
                        req.flash('success_msg', 'you have registered successfully and can log in ');
                         res.redirect('/facultylogin');
                        // res.send('hy');

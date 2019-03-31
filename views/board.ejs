@@ -1,0 +1,100 @@
+<!--
+Author: Colorlib
+Author URL: https://colorlib.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<title>SignUp Form</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- Custom Theme files -->
+<link href="/assets/css/registrationstyle.css" rel="stylesheet" type="text/css" media="all" />
+<!-- //Custom Theme files -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link href="https://bootswatch.com/4/journal/bootstrap.min.css" rel="stylesheet" type='text/css'>
+
+<!-- web font -->
+<link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+<!-- //web font -->
+<%- messages('message', locals)%>
+</head>
+<body>
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<!-- main -->
+	<div class="main-w3layouts wrapper">
+			
+		<h1>BOARD DETAILS</h1>
+		<div class="main-agileinfo">
+			<div class="agileits-top">
+					<% include ./partials/messages %>
+				<form action="/boards/board" method="post">
+					<!--<input class="text" id="username"type="text" name="username" placeholder="Name" required="">
+					<input class="text email" id="email"type="email" name="email" placeholder="Email" required="">
+					<input class="text" id="password"type="password" name="password" placeholder="Password" required="">
+					<input class="text w3lpass" id="cpassword" type="password" name="cpassword" placeholder="Confirm Password" required="">-->
+					<select class="main-agileinfo1" id="sboard" type="drop-down" name="sboard">
+							<option value="0" style='color:black;' >10th BOARD</option>
+							<option value="SSC" style='color:black;'>SSC</option>
+							<option value="CBSE" style='color:black;'>CBSE</option>
+							<option value="ICSE" style='color:black;'>ICSE</option>
+							<option value="OTHERS" style='color:black;'>OTHERS</option>
+                    </select>
+                    <div> <br> </div>
+                    <input class="text" id="sname" type="text" name="sname" placeholder="SCHOOL NAME" required="">
+                    <div> <br> </div>
+                    <input class="text" id="spercentage" type="text" name="spercentage" placeholder="PERCENTAGE" required="">
+                    <div> <br> </div>
+                    <input class="text" id="syear" type="text" name="syear" placeholder="PASSING OUT YEAR" required="">
+                    <div> <br> </div>
+                    <select class="main-agileinfo1" id="iboard" type="drop-down" name="iboard">
+                        <option value="0" style='color:black;' >INTERMEDIATE BOARD</option>
+                        <option value="APBIE" style='color:black;'>APBIE</option>
+                        <option value="TSBIE" style='color:black;'>TSBIE</option>
+                        <option value="OTHERS" style='color:black;'>OTHERS</option>
+                        <!--<option value="MECH" style='color:black;'>MECH</option>-->
+                    </select>
+                    <div> <br> </div>
+                    <input class="text" id="iname" type="text" name="iname" placeholder="SCHOOL NAME" required="">
+                    <div> <br> </div>
+                    <input class="text" id="ipercentage" type="text" name="ipercentage" placeholder="PERCENTAGE" required="">
+                    <div> <br> </div>
+                    <input class="text" id="iyear" type="text" name="iyear" placeholder="PASSING OUT YEAR" required="">
+					<!--<div class="wthree-text">
+						<label class="anim">
+							<input type="checkbox" class="checkbox" required="">
+							<span>I Agree To The Terms & Conditions</span>
+						</label>
+						<div class="clear"> </div>
+					</div>-->
+					<input type="submit" value="NEXT"><a href="/contacts/contact"></a>
+				</form>
+				<!--<p>Already have an Account? <a href="/login"> Login Now!</a></p>-->
+			</div>
+		</div>
+		<!-- copyright -->
+		<!--<div class="colorlibcopy-agile">
+			<p>� 2018 Colorlib Signup Form. All rights reserved | Design by <a href="https://colorlib.com/" target="_blank">Colorlib</a></p>
+		</div>-->
+		<!-- //copyright -->
+		<ul class="colorlib-bubbles">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+	<!-- //main -->
+</body>
+</html>
