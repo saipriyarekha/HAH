@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Page Title</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="/assets/css/fdash.css" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+</head>
+<body>
+
+<div class="header">
+  <h1>TRAINING CENTER</h1>
+  <button type='button' class='button' onclick="window.location.href='/facultylogin'"><img src="/assets/img/icons/logout.png"></button> </div>
+  <!--<p>My supercool header</p>-->
+</div>
+<img class="image" src="/assets/img/hitam logo.jpg" alt="Logo img">
+<BR>
+    <BR>
+        <BR>
+            <BR>
+                <BR>
+                    <BR>
+<form name='' id='' action='' method='post'>
+    <table>
+      <!--<tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Points</th>
+      </tr>-->
+      <input type="hidden" name="_id" value="{{users._id}}"> 
+      <tr>
+        <td>DEPARTMENT</td>
+        <td><select id="department" type="drop-down" name="department">
+            <option value="0" style='color:black;' >Department</option>
+            <option value="CSE" style='color:black;'>CSE</option>
+            <option value="ECE" style='color:black;'>ECE</option>
+            <option value="EEE" style='color:black;'>EEE</option>
+            <option value="MECH" style='color:black;'>MECH</option>
+    </select></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>TOPIC NAME</td>
+        <td><input class="text" id="tname"type="text" name="tname" placeholder="" required=""></td>
+        <td>--</td>
+      </tr>
+      <tr>
+        <td>DESCRIPTION</td>
+        <td><input class="text area" id="description"type="text" name="description" placeholder="" required=""></td>
+        <td>--</td>
+      </tr>
+      <tr>
+        <td>ATTACHMENT</td>
+        <td></td>
+        <td>--</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><input type="submit" value="SUBMIT"> </td>
+        <td>--</td>
+      </tr>
+      
+    </table>
+  </form>

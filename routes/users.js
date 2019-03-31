@@ -2,21 +2,35 @@ var express = require('express');
 var router = express.Router();
 var bcrypt = require('bcryptjs');
 var passport = require('passport');
+
 //user model
 var User = require('../models/User');
-router.get('/student', (req, res) => {
-res.render('student');
-//res.render('registrationstyle');
-});
-//router.get('/login', (req, res) => res.render('login'));
+router.get('/dashboard', (req, res) => 
+res.render('dashboard', {
+    name: req.user.username,
+    email: req.user.email,
+    dep: req.user.department,
+    roll: req.user.rollno,
+    yop: req.user.yop,
+    dob: req.user.dob,
+    phno: req.user.phno,
+    gender: req.user.gender,
+    fname: req.user.fname,
+    fphno: req.user.fphno,
+    mname: req.user.mname,
+    mphno: req.user.mphno
+}));
+//var Board = require('../models/boardm');
+router.get('/student', (req, res) => res.render('student'));
+
 
 //student handle
 router.post('/student', (req, res) => {
-    var { username, email, password, cpassword, department } = req.body;
+    var { username, email, password, cpassword, department, rollno, yop, dob, phno, gender, fname, fphno, mname, mphno } = req.body;
     let errors = [];
 
     //check required fields
-    if(!username || !email || !password || !cpassword || !department ) {
+    if(!username || !email || !password || !cpassword || !department || !rollno || !yop || !dob || !phno || !gender || !fname || !fphno || !mname || !mphno ) {
         errors.push({ msg: 'Please fill all the fields' });
     }
 
@@ -38,13 +52,22 @@ router.post('/student', (req, res) => {
             email,
             password,
             cpassword,
-            department
+            department,
+            rollno,
+            yop,
+            dob, 
+            phno, 
+            gender,
+            fname, 
+            fphno, 
+            mname, 
+            mphno
         });
     }else{
         //res.send('pass');
 
         //validation passed
-        User.findOne({ email: email })
+        User.findOne({ rollno: rollno })
         .then(user => {
             if(user) {
                 //user exists
@@ -55,7 +78,16 @@ router.post('/student', (req, res) => {
                     email,
                     password,
                     cpassword,
-                    department
+                    department,
+                    rollno,
+                    yop,
+                    dob, 
+                    phno, 
+                    gender, 
+                    fname, 
+                    fphno, 
+                    mname, 
+                    mphno
                 });
             }else {
                 const newUser = new User({
@@ -63,7 +95,16 @@ router.post('/student', (req, res) => {
                     email,
                     password,
                     cpassword,
-                    department
+                    department,
+                    rollno,
+                    yop,
+                    dob, 
+                    phno, 
+                    gender, 
+                    fname, 
+                    fphno, 
+                    mname, 
+                    mphno
                 });
                 //hash password
                 bcrypt.genSalt(10, (err, salt) => 

@@ -20,7 +20,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!-- web font -->
 <link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
 <!-- //web font -->
-<!--<%- messages('message', locals)%>-->
+<%- messages('message', locals)%>
 </head>
 <body>
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -38,7 +38,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<form action="/login" method="post">
 					<div>
 					</div>
-					<input class="text" type="text" name="email" placeholder="Email" required="">
+					<input class="text" type="text" name="rollno" placeholder="RollNo" required="">
 					<div>
 						<br>
 					</div>
@@ -52,10 +52,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						</label>-->
 						<div class="clear"> </div>
 					</div>
-					<input type="submit" value="SIGNIN">
+					<input type="submit" value="LOGIN">
 				</form>
-				<p>Don't have an Account? <a href="/mainlogin"> Sign up Now!</a></p>
-				<p><a href="/index">HOME</a></p>
+				<p>Don't have an Account? <a href="/users/student"> Sign up Now!</a></p>
+				<p><a href="/mainlogin">HOME</a></p>
 			</div>
 		</div>
 		<!-- copyright -->
