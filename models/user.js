@@ -57,6 +57,10 @@ var UserSchema = mongoose.Schema({
     mphno:{
         type: String,
         required: true
+    },
+    fileUploaded:{
+        type: String,
+        required: true
     }
 });
 var User = module.exports = mongoose.model('User',UserSchema)

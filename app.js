@@ -146,6 +146,15 @@ app.get('/contact', function (req, res) {
 app.get('/adashboard', function (req, res) {
   res.render('adashboard.ejs');
 });
+app.get('/drives', function (req, res) {
+  res.render('drives.ejs');
+});
+app.get('/awork', function (req, res) {
+  res.render('awork.ejs');
+});
+app.get('/atrainings', function (req, res) {
+  res.render('atrainings.ejs');
+});
 /*app.post('/student', function (req, res) {
   res.render('student.ejs');
 //  res.sendFile("student.ejs")
