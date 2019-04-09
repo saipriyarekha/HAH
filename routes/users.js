@@ -104,7 +104,8 @@ router.post('/student', (req, res) => {
                     fname, 
                     fphno, 
                     mname, 
-                    mphno
+                    mphno,
+                    fileUploaded
                 });
                 //hash password
                 bcrypt.genSalt(10, (err, salt) => 

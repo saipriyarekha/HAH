@@ -22,7 +22,7 @@
             <BR>
                 <BR>
                     <BR>
-<form name='' id='' action='' method='post'>
+<form action='' method='post' enctype = "multipart/form-data">
     <table>
       <!--<tr>
         <th>First Name</th>
@@ -48,12 +48,12 @@
       </tr>
       <tr>
         <td>DESCRIPTION</td>
-        <td><input class="text area" id="description"type="text" name="description" placeholder="" required=""></td>
+        <td><input class="textarea" rows="4" cols="50" id="description"type="text" name="description" placeholder="" required=""></td>
         <td>--</td>
       </tr>
       <tr>
         <td>ATTACHMENT</td>
-        <td></td>
+        <td><input type='file' id="fileUploaded" name='fileUploaded'></td>
         <td>--</td>
       </tr>
       <tr>

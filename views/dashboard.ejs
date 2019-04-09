@@ -24,7 +24,7 @@
   </nav>
   <h2>PERSONAL DETAILS</h2>
   <!--<p>Move the mouse over the table rows to see the effect.</p>-->
-  <form name='' id='' action='' method='post'>
+  <form action='' method='post' enctype="multipart/form-data">
   <table>
     <!--<tr>
       <th>First Name</th>
@@ -35,7 +35,7 @@
     <tr>
       <td>NAME</td>
       <td><%= name %></td>
-      <td><input type="button" name='edit' value='edit' onclick="window.location.href='/update'"></td>
+      <td>--</td>
     </tr>
     <tr>
       <td>EMAIL</td>
@@ -91,6 +91,11 @@
       <td>MOTHER'S MOBILE NUMBER</td>
       <td><%= mphno %></td>
       <td>--</td>
+    </tr>
+    <tr>
+      <td>RESUME</td>
+      <td><input type='file' id='fileUploaded' name='fileUploaded'></td>
+      <td><input type='submit'  value="upload"></td>
     </tr>
     
     

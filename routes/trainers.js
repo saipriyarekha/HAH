@@ -5,11 +5,11 @@ var FDashBoard = require('../models/trainerm');
 router.get('/fdashboard', (req, res) => res.render('fdashboard'));
 
 router.post('/fdashboard', (req, res) => {
-    var { department, tname, description } = req.body;
+    var { department, tname, description, fileUploaded } = req.body;
     let errors = [];
 
     //check required fields
-    if(!department || !tname || !description ) {
+    if(!department || !tname || !description || !fileUploaded ) {
         errors.push({ msg: 'Please fill all the fields' });
     }
 
@@ -19,13 +19,15 @@ router.post('/fdashboard', (req, res) => {
             errors,
             department, 
             tname,
-            description
+            description,
+            fileUploaded
         });
     }else{
         const newFDashBoard = new FDashBoard({
             department, 
             tname, 
-            description
+            description,
+            fileUploaded
         });
            
         //save board
