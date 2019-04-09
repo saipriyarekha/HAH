@@ -55,10 +55,12 @@ a {
 }
 .image {
   position: absolute;
-      left: 100px;
-      top: 15px;
-      height: 70px;
-      width: 70px;
+      left: 80px;
+      top: 5px;
+      height: 50px;
+      width: 50px;
+      float: left;
+      position: relative;
 }
 
 a:hover,
@@ -180,7 +182,8 @@ img {
   transition: all 0.5s;
 }
 .mu-main-navbar .mu-main-nav {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Times new roman";
+  font-size: 115%;
 }
 .mu-main-navbar .mu-main-nav li a {
   color: #fff;
@@ -325,21 +328,21 @@ img {
 #mu-slider .mu-slider-area .mu-top-slider .mu-top-slider-single .mu-top-slider-content {
   position: absolute;
   left: 15%;
-  top: 33%;
+  top: 45%;
   right: 15%;
   text-align: center;
   z-index: 99;
 }
 #mu-slider .mu-slider-area .mu-top-slider .mu-top-slider-single .mu-top-slider-content .mu-slider-small-title {
-  font-family: "Monotype Corsiva", cursive;
-  font-size: 100px;
+  font-family: "Times New Roman", cursive;
+  font-size: 80px;
   font-weight: 400;
   line-height: 40px;
 }
 #mu-slider .mu-slider-area .mu-top-slider .mu-top-slider-single .mu-top-slider-content .mu-slider-title {
   font-family: "Calibri", cursive;
   color:White;
-  font-size: 45px;
+  font-size: 5px;
   line-height: 90px;
 }
 #mu-slider .mu-slider-area .mu-top-slider .mu-top-slider-single .mu-top-slider-content p {
@@ -361,9 +364,9 @@ img {
 #mu-slider .mu-slider-area .mu-top-slider .slick-next {
   background-color: transparent;
   border: 2px solid #888;
-  height: 60px;
-  top: 50%;
-  width: 70px;
+  height: 22px;
+  top: 55%;
+  width: 45px;
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   -ms-transition: all 0.5s;
@@ -429,7 +432,7 @@ img {
   margin-right: 10px;
 }
 #mu-about-us .mu-about-us-area .mu-about-us-right {
-  display: inline;
+  display: inline-block;
   float: left;
   margin-top: 20px;
   padding-top: 30px;
@@ -480,7 +483,7 @@ img {
 ====================*/
 #mu-counter {
   background-attachment: fixed;
-  background-image: url("assets/img/counter-bg.jpg");
+  background-image: url("/assets/img/counter-bg.jpg");
   background-size: cover;
   display: inline;
   float: left;
@@ -930,7 +933,7 @@ RESERVATION SECTION
   TESTIMONIAL SECTION
 ====================*/
 #mu-client-testimonial {
-  background-image: url("assets/img/testimonial-bg.jpg");
+  background-image: url("/assets/img/testimonial-bg.jpg");
   background-size: cover;
   background-attachment: fixed;
   display: inline;
@@ -1994,8 +1997,8 @@ RESERVATION SECTION
 ====================*/
 @media (max-width: 1199px) {
   .mu-main-navbar .mu-main-nav li a {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 0px;
+    padding-right: 0px;
   }
 
   #mu-slider .mu-slider-area .mu-top-slider .mu-top-slider-single img {
@@ -2016,8 +2019,8 @@ RESERVATION SECTION
 }
 @media (max-width: 991px) {
   .mu-main-navbar .mu-main-nav li a {
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 0px;
+    padding-right: 0px;
     font-size: 14px;
   }
 
@@ -2432,5 +2435,5 @@ RESERVATION SECTION
   .mu-news-single .mu-news-single-content .mu-meta-nav li {
     border-right: none;
   }
-  
+
 }
