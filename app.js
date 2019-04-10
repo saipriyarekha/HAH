@@ -7,6 +7,8 @@ var flash = require('connect-flash');
 var session = require('express-session');
 var passport = require('passport');
 var ensureLoggedIn = require('connect-ensure-login').ensureLoggedIn
+var multer = require('multer');
+var path = require('path');
 //var ensureLoggedIn = require('ensureLoggedIn');
 //passport config
 require('./config/passport')(passport);
@@ -82,7 +84,8 @@ app.use(expressValidator({
   }
 }));
 
-
+//set storage engine
+const storage = multer.diskStorage({});
 //body parser middleware
 //parse applicAtion/x-www-forum-urlencoded
 app.use(bodyParser.urlencoded({ extended: false}))
