@@ -13,6 +13,10 @@ var TrainerSchema = mongoose.Schema ({
     description:{
         type: String,
         required: true
+    },
+    fileUploaded:{
+        type: String,
+        required: true
     }
 });
 

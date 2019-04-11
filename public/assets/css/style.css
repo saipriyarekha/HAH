@@ -1167,7 +1167,7 @@ RESERVATION SECTION
 #mu-chef .mu-chef-area .mu-chef-content .mu-chef-nav .slick-list li .mu-single-chef .mu-single-chef-social {
   background-color: #000;
   position: absolute;
-  bottom: -100%;
+  bottom: -5%;
   left: 0;
   right: 0;
   padding: 23px 20px;
