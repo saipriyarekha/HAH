@@ -1,0 +1,19 @@
+<% include ./partials/adashnavbar %>
+
+<%= typeof msg != 'undefined' ? msg : '' %>
+<form action='/' method='post' enctype='multipart/form-data'>
+    <table>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td><input type='file' name='place1'></td>
+            <td>--</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><button type='submit' class='buttons button1'> SUBMIT </button> </td>
+            <td></td>
+          </tr>
+    </table>
+    <br>
+    <img src="<%= typeof file != 'undefined' ? file : '' %>" class="responsive-img">
+</form>
