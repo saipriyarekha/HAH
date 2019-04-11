@@ -1997,8 +1997,8 @@ RESERVATION SECTION
 ====================*/
 @media (max-width: 1199px) {
   .mu-main-navbar .mu-main-nav li a {
-    padding-left: 0px;
-    padding-right: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
   #mu-slider .mu-slider-area .mu-top-slider .mu-top-slider-single img {
