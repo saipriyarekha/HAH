@@ -1,12 +1,14 @@
 var express = require('express');
 var router = express.Router();
 
-var FDashBoard = require('../models/trainerm');
+var Trainer = require('../models/trainerm');
 router.get('/fdashboard', (req, res) => res.render('fdashboard'));
 
 router.post('/fdashboard', (req, res) => {
     var { department, tname, description, fileUploaded } = req.body;
     let errors = [];
+
+    console.log(department+"  "+tname+" "+description)
 
     //check required fields
     if(!department || !tname || !description || !fileUploaded ) {
@@ -23,7 +25,7 @@ router.post('/fdashboard', (req, res) => {
             fileUploaded
         });
     }else{
-        const newFDashBoard = new FDashBoard({
+        const newTrainer = new Trainer({
             department, 
             tname, 
             description,
@@ -31,13 +33,13 @@ router.post('/fdashboard', (req, res) => {
         });
            
         //save board
-        newFDashBoard.save()
-        .then(FDashBoard => {
-           req.flash('k');
+        newTrainer.save()
+        .then(Trainer => {
+           //req.flash('k');
            // res.redirect('/contacts/contact');
            res.send('hy');
         })
-        .catch(err => console.log(err));
+        .catch(err => console.log("fail"));
         //console.log("fail");
     }
 });

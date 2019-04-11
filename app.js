@@ -85,7 +85,46 @@ app.use(expressValidator({
 }));
 
 //set storage engine
-const storage = multer.diskStorage({});
+const storage = multer.diskStorage({
+  destination: './public/img/placements/',
+  filename: function(req, file, cb){
+   cb(null,file.fieldname + '-' + Date.now() + path.extname(file.originalname));
+  }
+});
+
+//upload images
+const upload = multer({
+  storage: storage,
+  limits: {fileSize: 1000000}
+}).single('place1');
+//check filetype
+/*function checkFileType(file, cb){
+  //allowed ext
+  const filetypes = /jpeg|jpg|png|gif/;
+  //check ext
+  const extname = filetypes.test(path.extname(file.originalname).toLowerCase());
+  //check mime
+  const mimetype = filetypes.test(file.mimetype);
+
+  if(mimetype && extname){
+    return(null,true);
+  }else{
+    cb('Error: Images only!!! ');
+  }
+}*/
+
+//upload placements
+const testFolder = './img/placements/';
+const fs = require('fs');
+const imgFolder=path.resolve('public')
+
+
+
+        
+
+
+ 
+
 //body parser middleware
 //parse applicAtion/x-www-forum-urlencoded
 app.use(bodyParser.urlencoded({ extended: false}))
@@ -158,6 +197,9 @@ app.get('/awork', function (req, res) {
 app.get('/atrainings', function (req, res) {
   res.render('atrainings.ejs');
 });
+app.get('/aplacements', function (req, res) {
+  res.render('aplacements.ejs');
+});
 /*app.post('/student', function (req, res) {
   res.render('student.ejs');
 //  res.sendFile("student.ejs")
@@ -184,10 +226,42 @@ app.post('/update',  function(req, res) {
       user : req.user // get the user out of session and pass to template
   });
 });
+app.post('/', (req, res) => {
+  //res.send('test');
+ /* fs.readdir(imgFolder+'/img/placements', (err, files) => {
+    var filesList=[];
+    for(var i=0 ; i< files.length ; i++) {
+      var filename=files[i]; 
+      filesList[i]=(imgFolder+'/img/placements/'+filename);  
+      }  */
+    var filesList="123456"
+      res.render('index', {   
+        files: files
+      });
+ //  });
+ 
+  /*upload(req, res, (err) =>{
+    if(err){
+      res.render('index', {
+        msg: err
+      });
+    }else {
+      if(req.files == undefined){
+        res.render('index', {
+          msg: 'no file selected!'
+        });
+      }else{
+        res.render('index', {
+          files: req.files
+        });
+      }
+    }
+  });*/
+});
 
 
-app.get('/fdashboard', (req, res) => 
-res.render('fdashboard'));
+//app.get('/fdashboard', (req, res) => 
+//res.render('fdashboard'));
 //login handle
 app.post('/login', (req, res, next) =>{
   passport.authenticate('student', {
