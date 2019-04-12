@@ -15,7 +15,7 @@ var TrainerSchema = mongoose.Schema ({
         required: true
     },
     fileUploaded:{
-        type: String,
+        type: Buffer,
         required: true
     }
 });
