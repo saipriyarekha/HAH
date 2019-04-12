@@ -85,18 +85,18 @@ app.use(expressValidator({
 }));
 
 //set storage engine
-const storage = multer.diskStorage({
-  destination: './public/img/placements/',
-  filename: function(req, file, cb){
-   cb(null,file.fieldname + '-' + Date.now() + path.extname(file.originalname));
-  }
-});
+//const storage = multer.diskStorage({
+  //destination: './public/img/placements/',
+ // filename: function(req, file, cb){
+ //  cb(null,file.fieldname + '-' + Date.now() + path.extname(file.originalname));
+ // }
+//});
 
 //upload images
-const upload = multer({
+/*const upload = multer({
   storage: storage,
   limits: {fileSize: 1000000}
-}).single('place1');
+}).single('place1');*/
 //check filetype
 /*function checkFileType(file, cb){
   //allowed ext
@@ -114,16 +114,10 @@ const upload = multer({
 }*/
 
 //upload placements
-const testFolder = './img/placements/';
-const fs = require('fs');
-const imgFolder=path.resolve('public')
+//const testFolder = './img/placements/';
+//const fs = require('fs');
+//const imgFolder=path.resolve('public')
 
-
-
-        
-
-
- 
 
 //body parser middleware
 //parse applicAtion/x-www-forum-urlencoded
@@ -143,7 +137,8 @@ app.use('/admins', require('./routes/admins'));
 app.use('/boards', require('./routes/boards'));
 app.use('/contacts', require('./routes/contacts'));
 app.use('/dashs', require('./routes/dashs'));
-app.use('/trainers', require('./routes/trainers'));
+//app.use('/trainers', require('./routes/trainers'));
+app.use('/trainer', require('./routes/trainer'));
 
 app.get('/404', function (req, res) {
   res.render('404.ejs');
@@ -226,14 +221,14 @@ app.post('/update',  function(req, res) {
       user : req.user // get the user out of session and pass to template
   });
 });
-app.post('/', (req, res) => {
+/*app.post('/', (req, res) => {
   //res.send('test');
  /* fs.readdir(imgFolder+'/img/placements', (err, files) => {
     var filesList=[];
     for(var i=0 ; i< files.length ; i++) {
       var filename=files[i]; 
       filesList[i]=(imgFolder+'/img/placements/'+filename);  
-      }  */
+      }  
     var filesList="123456"
       res.render('index', {   
         files: files
@@ -257,7 +252,7 @@ app.post('/', (req, res) => {
       }
     }
   });*/
-});
+//});
 
 
 //app.get('/fdashboard', (req, res) => 
@@ -274,7 +269,7 @@ app.post('/login', (req, res, next) =>{
 //login handle
 app.post('/facultylogin', (req, res, next) =>{
   passport.authenticate('faculty', {
-      successRedirect: '/trainers/fdashboard',
+      successRedirect: '/trainer/tdashboard',
       failureRedirect: '/facultylogin',
       failureFlash: true
   })(req, res, next);
