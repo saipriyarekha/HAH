@@ -140,6 +140,9 @@ app.use('/dashs', require('./routes/dashs'));
 //app.use('/trainers', require('./routes/trainers'));
 app.use('/trainer', require('./routes/trainer'));
 
+app.get('/display', function (req, res) {
+  res.render('display.ejs');
+});
 app.get('/404', function (req, res) {
   res.render('404.ejs');
 });
@@ -153,6 +156,19 @@ app.get('/facultylogin', function (req, res) {
 app.get('/adminlogin', function (req, res) {
   res.render('adminlogin.ejs');
 });
+app.post('/aimg', function (req, res) {
+  res.render('display.ejs');
+});
+app.post('/aplacements', function (req, res) {
+  res.render('display.ejs');
+});
+app.post('/atrainings', function (req, res) {
+  res.render('display.ejs');
+});
+app.post('/awork', function (req, res) {
+  res.render('display.ejs');
+});
+
 /*app.get('/student', function (req, res) {
   res.render('student.ejs');
 //  res.sendFile("student.ejs")
@@ -172,13 +188,13 @@ app.get('/mainlogin', function (req, res) {
   res.render('mainlogin.ejs');
 });
 /*app.get('/dashboard', function (req, res) {
-    res.render('dashboard.ejs');  
+    res.render('dashboard.ejs');
 });*/
 app.get('/board', function (req, res) {
-  res.render('board.ejs');  
+  res.render('board.ejs');
 });
 app.get('/contact', function (req, res) {
-  res.render('contact.ejs');  
+  res.render('contact.ejs');
 });
 app.get('/adashboard', function (req, res) {
   res.render('adashboard.ejs', {
@@ -255,11 +271,11 @@ app.post('/fdashboard', function (req, res) {
     //var password = req.body.password;
     //var cpassword = req.body.cpassword;
     //res.render('login.ejs');
-    //console.log(htmlData); 
+    //console.log(htmlData);
 //});
 app.post('/update',  function(req, res) {
   user.update({_id: req.session.passport.user}, {
-      displayName: req.body.username 
+      displayName: req.body.username
   }, function(err, numberAffected, rawResponse) {
      console.log('new profile update error');
   });
@@ -272,15 +288,15 @@ app.post('/update',  function(req, res) {
  /* fs.readdir(imgFolder+'/img/placements', (err, files) => {
     var filesList=[];
     for(var i=0 ; i< files.length ; i++) {
-      var filename=files[i]; 
-      filesList[i]=(imgFolder+'/img/placements/'+filename);  
-      }  
+      var filename=files[i];
+      filesList[i]=(imgFolder+'/img/placements/'+filename);
+      }
     var filesList="123456"
-      res.render('index', {   
+      res.render('index', {
         files: files
       });
  //  });
- 
+
   /*upload(req, res, (err) =>{
     if(err){
       res.render('index', {
@@ -301,12 +317,12 @@ app.post('/update',  function(req, res) {
 //});
 
 
-//app.get('/fdashboard', (req, res) => 
+//app.get('/fdashboard', (req, res) =>
 //res.render('fdashboard'));
 //login handle
 app.post('/login', (req, res, next) =>{
   passport.authenticate('student', {
-      
+
       successRedirect: '/users/dashboard',
       failureRedirect: '/login',
       failureFlash: true
