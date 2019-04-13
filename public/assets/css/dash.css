@@ -49,8 +49,13 @@ body {
         width: 70px;
   }
   .link {
-    color: green;
+    color: green; 
     background-color: transparent;
     
+  }
+  .heading{
+    font-size: 25px;
+    text-align: center;
+    color: green;
   }
   
