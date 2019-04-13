@@ -8,11 +8,11 @@ router.get('/tdashboard', (req, res) => res.render('tdashboard'));
 
 //trainer datails
 router.post('/tdashboard', (req, res) => {
-    var { department, description } = req.body;
+    var { department, topicname, description, fileUploaded } = req.body;
     let errors = [];
 
     //check required fields
-    if(!department || !description ) {
+    if(!department || !topicname ||!description || !fileUploaded) {
         errors.push({ msg: 'please fill all the fields' });
     }
     
@@ -20,12 +20,16 @@ router.post('/tdashboard', (req, res) => {
         res.render('tdashboard', {
             errors,
             department,  
-            description
+            topicname,
+            description,
+            fileUploaded
         });
     }else{
         const newTrainer = new Trainer({
-            department, 
-            description
+            department,
+            topicname, 
+            description,
+            fileUploaded
         });
              
         //save board

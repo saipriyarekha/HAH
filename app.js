@@ -181,7 +181,9 @@ app.get('/contact', function (req, res) {
   res.render('contact.ejs');  
 });
 app.get('/adashboard', function (req, res) {
-  res.render('adashboard.ejs');
+  res.render('adashboard.ejs', {
+    name: req.name
+  });
 });
 app.get('/drives', function (req, res) {
   res.render('drives.ejs');
@@ -194,6 +196,50 @@ app.get('/atrainings', function (req, res) {
 });
 app.get('/aplacements', function (req, res) {
   res.render('aplacements.ejs');
+});
+app.get('/acdc', function (req, res) {
+  res.render('acdc.ejs');
+});
+app.get('/aimg', function (req, res) {
+  res.render('aimg.ejs');
+});
+app.get('/strainings', function (req, res) {
+  res.render('strainings.ejs', {
+    name: req.user.username
+});
+});
+app.get('/sdrives', function (req, res) {
+  res.render('sdrives.ejs', {
+    name: req.user.username
+});
+});
+app.get('/scdc', function (req, res) {
+  res.render('scdc.ejs', {
+    name: req.user.username
+});
+});
+var trainerSchema = new mongoose.Schema({
+  department: String,
+  tname: String,
+  description: String,
+  fileUploaded: Buffer
+});
+
+var trainer = mongoose.model("trainer",trainerSchema);
+
+app.get('/fdashboard', function (req, res) {
+  res.render('fdashboard.ejs');
+});
+app.post('/fdashboard', function (req, res) {
+  var trainer = new trainer(req.body);
+  trainer.save()
+  .then(item =>{
+    res.send("saved");
+  })
+  .catch(err => {
+    res.status(404).send("failed");
+  });
+ // res.render('fdashboard.ejs');
 });
 /*app.post('/student', function (req, res) {
   res.render('student.ejs');
@@ -269,7 +315,7 @@ app.post('/login', (req, res, next) =>{
 //login handle
 app.post('/facultylogin', (req, res, next) =>{
   passport.authenticate('faculty', {
-      successRedirect: '/trainer/tdashboard',
+      successRedirect: '/fdashboard',
       failureRedirect: '/facultylogin',
       failureFlash: true
   })(req, res, next);
