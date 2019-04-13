@@ -7,8 +7,16 @@ var TrainerSchema = mongoose.Schema({
         type: String,
         required: true
     },
+    topicname:{
+        type: String,
+        required: true
+    },
     description:{
         type: String,
+        required: true
+    },
+    fileUploaded:{
+        type:String,
         required: true
     }
 });

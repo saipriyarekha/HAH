@@ -1,11 +1,72 @@
-<form action="/trainer/fdashboard" method="post" enctype="multipart/form-data">
-  <select id="department" type="drop-down" name="department">
-      <option value="0" style='color:black;' >Department</option>
-      <option value="CSE" style='color:black;'>CSE</option>
-      <option value="ECE" style='color:black;'>ECE</option>
-      <option value="EEE" style='color:black;'>EEE</option>
-      <option value="MECH" style='color:black;'>MECH</option>
-  </select>
-  <input type="text" name="description" placeholder="description" required="">
-  <input type="submit" value="SUBMIT">
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Page Title</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="/assets/css/fdash.css" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link href="https://bootswatch.com/4/journal/bootstrap.min.css" rel="stylesheet" type='text/css'>
+
+<%- messages('message', locals)%>
+</head>
+<body>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<div class="header">
+  <h1>TRAINING CENTER</h1>
+  <button type='button' class='button' onclick="window.location.href='/facultylogin'"><img src="/assets/img/icons/logout.png"></button> </div>
+  <!--<p>My supercool header</p>-->
+</div>
+<img class="image" src="/assets/img/hitam logo.jpg" alt="Logo img">
+<BR>
+    <BR>
+        <BR>
+            <BR>
+                <BR>
+                    <BR>
+                      <% include ./partials/messages %>
+<form action='/fdashboard' method='post' enctype = "multipart/form-data">
+    <table>
+      <!--<tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Points</th>
+      </tr>-->
+     <!-- <input type="hidden" name="_id" value="{{users._id}}"> -->
+      <tr>
+        <td>DEPARTMENT</td>
+        <td><select id="department" type="drop-down" name="department">
+            <option value="0" style='color:black;' >Department</option>
+            <option value="CSE" style='color:black;'>CSE</option>
+            <option value="ECE" style='color:black;'>ECE</option>
+            <option value="EEE" style='color:black;'>EEE</option>
+            <option value="MECH" style='color:black;'>MECH</option>
+    </select></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>TOPIC NAME</td>
+        <td><input class="text" id="tname"type="text" name="tname" placeholder="" required=""></td>
+        <td>--</td>
+      </tr>
+      <tr>
+        <td>DESCRIPTION</td>
+        <td><input class="textarea" rows="4" cols="50" id="description" type="text" name="description" placeholder="" required=""></td>
+        <td>--</td>
+      </tr>
+      <tr>
+        <td>ATTACHMENT</td>
+        <td><input type="file" id="fileUploaded" name="fileUploaded"></td>
+        <td>--</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><input type="submit" value="SUBMIT"> </td>
+        <td>--</td>
+      </tr>
+
+    </table>
+  </form>

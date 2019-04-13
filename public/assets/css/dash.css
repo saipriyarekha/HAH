@@ -48,4 +48,9 @@ body {
         height: 70px;
         width: 70px;
   }
+  .link {
+    color: green;
+    background-color: transparent;
+    
+  }
   
